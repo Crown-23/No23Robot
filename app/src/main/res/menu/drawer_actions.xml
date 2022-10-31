@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/blankFragment"
+        android:title="@string/drawer_placeholder" />
+    <item
+        android:id="@+id/versionFragment"
+        android:title="@string/drawer_version" />
+</menu>
