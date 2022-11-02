@@ -1,12 +1,15 @@
 package crown.no23.robot.versions.android13
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import crown.no23.robot.R
-import crown.no23.robot.databinding.ActivityPhotoPickerBinding
+import crown.no23.robot.databinding.FragmentPhotoPickerBinding
 
 /**
  * Description：Photo picker(照片选择器)
@@ -14,15 +17,23 @@ import crown.no23.robot.databinding.ActivityPhotoPickerBinding
  * 如果照片选择器在设备上不可用，支持库会自动调用 ACTION_OPEN_DOCUMENT intent 操作。搭载 Android 4.4（API 级别 19）或更高版本的设备支持此 intent。
  * 官方文档地址：https://developer.android.google.cn/training/data-storage/shared/photopicker
  */
-class PhotoPickerActivity : AppCompatActivity() {
-//    private val viewBinding by lazy { ActivityPhotoPickerBinding.inflate(layoutInflater) }
-//
+class PhotoPickerFragment : Fragment() {
+    private lateinit var viewBinding: FragmentPhotoPickerBinding
+
 //    private lateinit var pickMedia: ActivityResultLauncher<PickVisualMediaRequest>
 //    private lateinit var pickMultipleMedia: ActivityResultLauncher<PickVisualMediaRequest>
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(viewBinding.root)
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        viewBinding = FragmentPhotoPickerBinding.inflate(inflater, container, false)
+        return viewBinding.root
+    }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
 //
 //        viewBinding.singleBtn.setOnClickListener { chooseSingleMedia() }
 //        viewBinding.multiBtn.setOnClickListener { chooseMultipleMedia() }
@@ -34,7 +45,7 @@ class PhotoPickerActivity : AppCompatActivity() {
 //            if (uri != null) {
 //                // TODO: show result in TextView
 //            } else {
-//                Toast.makeText(this, R.string.cancel_choose, Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), R.string.cancel_choose, Toast.LENGTH_SHORT).show()
 //            }
 //        }
 //
@@ -45,7 +56,7 @@ class PhotoPickerActivity : AppCompatActivity() {
 //            if (uris.isNotEmpty()) {
 //                // TODO: show result in TextView
 //            } else {
-//                Toast.makeText(this, R.string.cancel_choose, Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), R.string.cancel_choose, Toast.LENGTH_SHORT).show()
 //            }
 //        }
 //    }

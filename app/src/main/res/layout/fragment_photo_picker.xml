@@ -2,25 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/app_padding"
+    android:paddingEnd="@dimen/app_padding">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/single_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
         android:text="@string/choose_single_media"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/multi_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="@dimen/app_margin"
         android:text="@string/choose_multiple_media"
         app:layout_constraintTop_toBottomOf="@id/single_btn" />
 
@@ -28,9 +25,7 @@
         android:id="@+id/result_tv"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="@dimen/app_margin"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintTop_toBottomOf="@id/multi_btn" />
 

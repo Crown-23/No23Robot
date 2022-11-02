@@ -18,9 +18,21 @@
         android:id="@+id/versionFragment"
         android:name="crown.no23.robot.jetpack.navigation.VersionFragment"
         android:label="@string/drawer_version"
-        tools:layout="@layout/fragment_version" >
+        tools:layout="@layout/fragment_version">
         <action
             android:id="@+id/action_versionFragment_to_blankFragment"
             app:destination="@id/blankFragment" />
+        <action
+            android:id="@+id/action_versionFragment_to_photoPickerFragment"
+            app:destination="@id/photoPickerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+    <fragment
+        android:id="@+id/photoPickerFragment"
+        android:name="crown.no23.robot.versions.android13.PhotoPickerFragment"
+        android:label="PhotoPicker"
+        tools:layout="@layout/fragment_photo_picker" />
 </navigation>
