@@ -4,7 +4,7 @@
     <string name="choose_multiple_media">选择多个媒体项</string>
     <string name="cancel_choose">取消选择</string>
 
-    <string name="drawer_placeholder">待开发</string>
+    <string name="drawer_placeholder">Todo</string>
     <string name="drawer_version">Android版本新功能</string>
 
 </resources>
